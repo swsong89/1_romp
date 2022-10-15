@@ -14,7 +14,7 @@ class Submit(Base):
         self._build_model_()
         self.collect_3DPW_layout()
 
-        self.loader_val = self._create_single_data_loader(dataset='pw3d',train_flag=False,split='all', mode='whole')
+        self.loader_val = self._create_single_data_loader(dataset='pw3d',train_flag=False,split='val', mode='whole')
         self.output_dir = args.output_dir
         print('Initialization finished!')
 
@@ -165,6 +165,8 @@ class Submit(Base):
     def run_official_evaluation(self, save_dir):
         print('Saving dir:', save_dir)
         os.chdir(os.path.join(config.code_dir,'evaluation'))
+        print('1')
+        print("python pw3d_eval/evaluate.py {} {}".format(save_dir.replace(' ','\ '), os.path.join(args.dataset_rootdir,'sequenceFiles').replace(' ','\ ')))
         os.system("python pw3d_eval/evaluate.py {} {}".format(\
             save_dir.replace(' ','\ '), os.path.join(args.dataset_rootdir,'sequenceFiles').replace(' ','\ ')))
         #os.system('cp {} {}'.format(self.gmodel_path, save_dir))

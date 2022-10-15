@@ -341,7 +341,7 @@ def get_data(paths_gt, paths_pred, truth_dir):
             shape_params = np.tile(shape_params, (pose_params_i.shape[0], 1))
 
             trans_params = np.array(data_gt['trans'])
-            
+
             trans_params_i = trans_params[i, valid_indices, :]
 
             # Get the GT joint and vertex positions and the global rotation matrices
@@ -378,7 +378,9 @@ def get_paths(submit_dir, truth_dir):
     fnames_gt = []
     fnames_pred = []
 
-    keys = ['train', 'validation', 'test']
+    # keys = ['train', 'validation', 'test']
+
+    keys = ['validation']
 
     for key in keys:
         fnames_gt_temp = sorted(glob.glob(os.path.join(truth_dir, key, "") + "*.pkl"))
@@ -396,7 +398,7 @@ def main(submit_dir, truth_dir, output_filename):
     :param truth_dir: The location of the GT files
     :return output_filename: The location of the output txt file
     """
-
+    print('2')
     # Get all the GT and submission paths in paired list form
     fnames_gt, fnames_pred = get_paths(submit_dir, truth_dir)
 
@@ -479,14 +481,21 @@ def main(submit_dir, truth_dir, output_filename):
 
 if __name__ == "__main__":
 
-    # Process reference and results directory
-    submit_dir = sys.argv[1]
-    truth_dir = sys.argv[2]
+    # # Process reference and results directory
+    # print('3')
+    # submit_dir = sys.argv[1]
+    # truth_dir = sys.argv[2]
+    #
+    # # Make output directory
+    # output_filename = submit_dir+'_scores.txt'
+    # print('~~start evaluation~~')
+    # print('submit_dir', submit_dir)
+    # print('truth_dir', truth_dir)
+    # # Execute main program
+    # main(submit_dir, truth_dir, output_filename)
 
-    # Make output directory
+
+    submit_dir = '/home/ssw/code/ROMP_v1.0/output/R_ROMP_hrnet32'
+    truth_dir = '/home/ssw/code/dataset/3DPW/sequenceFiles'
     output_filename = submit_dir+'_scores.txt'
-    print('~~start evaluation~~')
-    print('submit_dir', submit_dir)
-    print('truth_dir', truth_dir)
-    # Execute main program
     main(submit_dir, truth_dir, output_filename)

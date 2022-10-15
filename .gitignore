@@ -11,4 +11,6 @@ __pycache__/
 *.py[cod]
 *.log
 *.mp4
+.idea/
+output/
 src/utils/bvh_utils.py

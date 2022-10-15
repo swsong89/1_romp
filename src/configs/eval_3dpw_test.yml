@@ -4,7 +4,7 @@ ARGS:
  GPUS: 0
  model_version: 1
  
- val_batch_size: 64
+ val_batch_size: 16
  nw_eval: 2
  eval: True
  collision_aware_centermap: False
@@ -18,5 +18,7 @@ ARGS:
 
  old_version: True
  gmodel_path: ../trained_models/ROMP_hrnet32.pkl #  '../trained_models/ROMP_resnet50.pkl'
- dataset_rootdir: '/media/yusun/Extreme SSD/dataset/3DPW' #'/path/to/dataset/3DPW'
- annot_dir: '/home/yusun/ROMP_EVAL/data/vibe_db' #'/path/to/vibe_db where 3dpw_test_db.pt located'
+ dataset_rootdir: '/home/ssw/code/dataset/3DPW'
+ output_dir: '/home/ssw/code/ROMP_v1.0/output'
+# dataset_rootdir: '/media/yusun/Extreme SSD/dataset/3DPW' #'/path/to/dataset/3DPW'
+# annot_dir: '/home/yusun/ROMP_EVAL/data/vibe_db' #'/path/to/vibe_db where 3dpw_test_db.pt located'
