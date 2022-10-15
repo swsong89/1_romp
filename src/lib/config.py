@@ -9,6 +9,9 @@ import logging
 code_dir = os.path.abspath(__file__).replace('config.py','')
 project_dir = os.path.abspath(__file__).replace('/src/lib/config.py','')
 root_dir = project_dir.replace(project_dir.split('/')[-1],'')#os.path.abspath(__file__).replace('/CenterMesh/src/config.py','')
+print('root_dir', root_dir)
+print('output_dir', os.path.join(project_dir, 'output/'))
+
 model_dir = os.path.join(project_dir,'models')
 trained_model_dir = os.path.join(project_dir,'trained_models')
 
@@ -16,6 +19,7 @@ parser = argparse.ArgumentParser(description = 'ROMP: Monocular, One-stage, Regr
 parser.add_argument('--tab',type = str,default = 'ROMP_v1',help = 'additional tabs')
 parser.add_argument('--configs_yml',type = str,default = '/home/ssw/code/ROMP_v1.0/ROMP/src/configs/eval_3dpw_test.yml',help = 'setting for training') #'configs/basic_training_v6_ld.yml'
 parser.add_argument('--demo_image_folder',type = str,default = 'None',help = 'absolute path to the image folder containing the input images for evaluation')
+parser.add_argument('--output_dir', type=str, default=os.path.join(root_dir, 'output/'), help='path to save outputs')
 
 mode_group = parser.add_argument_group(title='mode options')
 #mode setting

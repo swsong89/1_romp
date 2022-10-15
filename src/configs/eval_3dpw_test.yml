@@ -18,7 +18,7 @@ ARGS:
 
  old_version: True
  gmodel_path: ../trained_models/ROMP_hrnet32.pkl #  '../trained_models/ROMP_resnet50.pkl'
- dataset_rootdir: '/home/ssw/code/dataset/3DPW'
- output_dir: '/home/ssw/code/ROMP_v1.0/output'
+# dataset_rootdir: '/home/ssw/code/dataset/3DPW'
+# output_dir: '/home/ssw/code/ROMP_v1.0/output'
 # dataset_rootdir: '/media/yusun/Extreme SSD/dataset/3DPW' #'/path/to/dataset/3DPW'
 # annot_dir: '/home/yusun/ROMP_EVAL/data/vibe_db' #'/path/to/vibe_db where 3dpw_test_db.pt located'
