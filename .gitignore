@@ -5,7 +5,8 @@ demo/000003*
 trained_models
 models/smplx
 models/smpl
-
+activate_env.sh
+压缩包
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
